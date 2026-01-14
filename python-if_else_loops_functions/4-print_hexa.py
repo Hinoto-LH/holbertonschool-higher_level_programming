@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 for numb in range(0, 99):
-    print("{}".format(numb), " = ", "{}".format(hex(numb)))
+    print("{}".format(numb), " = ", hex(numb))
