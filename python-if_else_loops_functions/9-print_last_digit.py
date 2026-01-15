@@ -5,4 +5,4 @@ def print_last_digit(number):
         lastDig = number % 10 - 10
     else:
         lastDig = number % 10
-        print(lastDig)
+    return lastDig
