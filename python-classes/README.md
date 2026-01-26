@@ -81,11 +81,12 @@ Ici, name est un attribut de l’objet p1.
 
 En Python, c’est une convention, pas une vraie restriction.
 
-Type	Syntaxe	Signification
-Public	name	Accessible partout
-Protected	_name	Usage interne conseillé
-Private	__name	Name mangling
-self.__age  # devient _Classe__age
+| Type      | Syntaxe  | Signification           |
+| --------- | -------- | ----------------------- |
+| Public    | `name`   | Accessible partout      |
+| Protected | `_name`  | Usage interne conseillé |
+| Private   | `__name` | Name mangling           |
+
 -------------------------------------------
 
 8️⃣ What is self
