@@ -98,9 +98,11 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Format “informal” lisible pour un humain"""
-        return "{}{}".format(self.width, self.height)
-
-    def __repr__(self):
         """Format “officiel” utilisable pour recréer l’objet"""
-        return "{}{}".format(self.width, self.height)
+        if self.width == 0 or self.height == 0:
+            return ""
+
+        rows = []
+        for _ in range(self.height):
+            rows.append("#" * self.width)
+        return "\n".join(rows)
