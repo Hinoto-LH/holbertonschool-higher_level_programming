@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Defines a Square class with size and position."""
+
+
 class Square:
     """Defines a Square class with size and position."""
 
@@ -62,15 +65,13 @@ class Square:
 
         Args:
             value (tuple): New position (x, y).
-
-        Raises:
-            TypeError: If value is not a tuple of 2 positive integers.
         """
         if (not isinstance(value, tuple) or
             len(value) != 2 or
             not all(isinstance(i, int) for i in value) or
                 value[0] < 0 or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
+
         self.__position = value
 
     def area(self):
@@ -91,15 +92,14 @@ class Square:
         if self.size == 0:
             return
 
-        else:
-            # Print vertical offset
-            for retour in range(self.position[1]):
-                print("")
+        # Print vertical offset
+        for retour in range(self.position[1]):
+            print("")
 
-            # Print square rows
-            for index in range(self.size):
-                for space in range(self.position[0]):
-                    print(" ", end="")
-                for index2 in range(self.size):
-                    print("#", end="")
-                print()
+        # Print square rows
+        for index in range(self.size):
+            for space in range(self.position[0]):
+                print(" ", end="")
+            for index2 in range(self.size):
+                print("#", end="")
+            print()
