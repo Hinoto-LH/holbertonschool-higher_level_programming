@@ -81,7 +81,7 @@ class Square:
         Returns:
             int: Area of the square.
         """
-        return self.size ** 2
+        return self.__size ** 2
 
     def my_print(self):
         """
@@ -89,7 +89,7 @@ class Square:
 
         The square is printed according to its size and position.
         """
-        if self.size == 0:
+        if self.__size == 0:
             return
 
         # Print vertical offset
@@ -97,9 +97,9 @@ class Square:
             print("")
 
         # Print square rows
-        for index in range(self.size):
-            for space in range(self.position[0]):
+        for index in range(self.__size):
+            for space in range(self.__position[0]):
                 print(" ", end="")
-            for index2 in range(self.size):
+            for index2 in range(self.__size):
                 print("#", end="")
             print()
