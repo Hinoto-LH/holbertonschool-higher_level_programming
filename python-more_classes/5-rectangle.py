@@ -111,4 +111,8 @@ class Rectangle:
         """Format “officiel” utilisable pour recréer l’objet"""
         return "Rectangle({}, {})".format(self.width, self.height)
 
-    print("Bye rectangle...")
+    def __del__(self):
+        """
+        Delete all instance of Rectangle
+        """
+        print("Bye rectangle...")
