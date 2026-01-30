@@ -3,6 +3,8 @@
 
 
 class Rectangle:
+    """Represents a rectangle with width and height."""
+
     def __init__(self, width=0, height=0):
         """Parameters of the rectangle"""
         self.__width = width
@@ -36,10 +38,12 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-        def area(self):
-            """Return the area of the rectangle"""
-            return self.__height * self.__width
+    def area(self):
+        """Return the area of the rectangle"""
+        return self.__height * self.__width
 
-        def perimeter(self):
-            """ Return the perimeter of the rectangle"""
-            return (2 * self.__height) + (2 * self.__width)
+    def perimeter(self):
+        """ Return the perimeter of the rectangle"""
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return (2 * self.__height) + (2 * self.__width)
