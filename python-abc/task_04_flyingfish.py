@@ -34,4 +34,4 @@ Magicarpe = FlyingFish()
 Magicarpe.fly
 Magicarpe.swim
 Magicarpe.habitat
-print(FlyingFish.mro())
+mro = FlyingFish.__mro__
