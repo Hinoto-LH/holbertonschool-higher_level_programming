@@ -1,6 +1,15 @@
 #!/usr/bin/python3
+"""
+Module qui définit une classe BaseGeometry vide,
+servant de classe de base pour la géométrie.
+"""
+
+
 class BaseGeometry:
-    """Write an empty class BaseGeometry."""
+    """
+    Classe de base pour la géométrie.
+    Elle contient son aire.
+    """
     def area(self):
         """
         Public instance method: def area(self): that raises an Exception
