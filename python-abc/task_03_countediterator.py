@@ -1,37 +1,42 @@
 #!/usr/bin/python3
+#!/usr/bin/python3
 """
 Module qui définit la classe CountedIterator.
 
-Cette classe permet d'itérer sur un iterable tout en comptant
-le nombre d'éléments retournés.
+Cette classe étend un itérateur Python standard
+et garde une trace du nombre d'éléments itérés.
 """
 
 
 class CountedIterator:
     """
-    Itérateur qui compte le nombre d'éléments itérés.
+    Itérateur qui compte combien d'éléments ont été parcourus.
     """
 
     def __init__(self, iterable):
         """
-        Initialise le compteur et l'itérateur.
+        Initialise l'itérateur et le compteur.
 
         Args:
-            iterable: objet itérable
+            iterable: un objet itérable
         """
+        self.iterator = iter(iterable)
         self.count = 0
-        self.it = iter(iterable)
 
     def __next__(self):
         """
-        Retourne l'élément suivant de l'itérateur
-        et incrémente le compteur.
+        Retourne l'élément suivant et incrémente le compteur.
 
         Returns:
             élément suivant de l'itérable
+
+        Raises:
+            StopIteration: lorsque l'itérable est épuisé
         """
+        value = next(self.iterator)
+        # Lève StopIteration automatiquement si terminé
         self.count += 1
-        return next(self.it)
+        return value
 
     def __iter__(self):
         """
