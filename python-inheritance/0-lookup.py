@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+Ce module contient une fonction qui affiche les attributs
+et méthodes disponibles pour un objet donné.
+"""
+
+
 def lookup(obj):
     """
     Retourne la liste des attributs et méthodes disponibles d'un objet.
