@@ -1,18 +1,8 @@
 #!/usr/bin/python3
-# La ligne ci-dessus indique quel interpréteur Python utiliser (utile sous Linux)
-
 def read_file(filename=""):
     """
-    Cette fonction lit le contenu d'un fichier texte
-    et affiche son contenu à l'écran.
+    Reads a text file (UTF-8) and prints its content to stdout
     """
 
-    # Ouverture du fichier en mode lecture ("r")
-    # Le fichier sera automatiquement fermé à la fin du bloc 'with'
-    with open("python-input_output/tests/my_file_0.txt", "r") as f:
-
-        # Lecture de tout le contenu du fichier
-        filename = f.read()
-
-        # Affichage du contenu du fichier
-        print(filename)
+    with open("tests/" + filename, "r", encoding="utf-8") as f:
+        print(f.read(), end="")
