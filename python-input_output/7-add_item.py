@@ -1,14 +1,21 @@
 #!/usr/bin/python3
-# Import the sys module to access command line arguments
-import sys
+"""
+This script adds all command-line arguments to a JSON file (add_item.json).
+It loads the existing list from the file, appends new arguments, and saves
+the updated list back. The JSON file is created if it does not exist.
+"""
 
+import sys
 # Import path to check if a file exists
 from os import path
-
 # Import functions from previous tasks using dynamic import
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
+
+"""
+Main function to add command-line arguments to a JSON file.
+"""
 # Retrieve the list of command line arguments
 args = sys.argv
 
