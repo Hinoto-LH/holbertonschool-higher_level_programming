@@ -71,5 +71,8 @@ class CustomObject:
         Cette méthode lit le fichier binaire, charge l'objet
         sérialisé avec pickle et retourne l'instance reconstruite.
         """
-        with open(filename, "rb") as f:
-            return pickle.load(f)
+        try:
+            with open(filename, "rb") as f:
+                return pickle.load(f)
+        except FileNotFoundError:
+            return None
