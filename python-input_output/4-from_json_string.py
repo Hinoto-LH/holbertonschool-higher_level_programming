@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This module provides a function that converts a JSON string
+into its corresponding Python object.
+"""
+
 import json
 
 
