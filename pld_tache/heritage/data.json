@@ -1,0 +1,106 @@
+{
+    "ec0e9df3-c29b-4102-a493-6bf0bf856a64": {
+        "type": "Centaure",
+        "id": "ec0e9df3-c29b-4102-a493-6bf0bf856a64",
+        "created_at": "2026-02-12T10:48:21.636580",
+        "updated_at": "2026-02-12T10:48:21.636587",
+        "nom": "Firenze",
+        "force": 85,
+        "agilite": 90,
+        "age": 150
+    },
+    "7f667575-02e4-4abf-8fc9-2e873d1099a8": {
+        "type": "Centaure",
+        "id": "7f667575-02e4-4abf-8fc9-2e873d1099a8",
+        "created_at": "2026-02-12T10:48:21.636609",
+        "updated_at": "2026-02-12T10:48:21.636611",
+        "nom": "Bane",
+        "force": 92,
+        "agilite": 75,
+        "age": 180
+    },
+    "c841c6cc-80bf-4173-ac54-83a0f01fa271": {
+        "type": "Acromentule",
+        "id": "c841c6cc-80bf-4173-ac54-83a0f01fa271",
+        "created_at": "2026-02-12T10:48:21.636624",
+        "updated_at": "2026-02-12T10:48:21.636626",
+        "nom": "Aragog",
+        "taille": "XXL",
+        "venin": "Mortel",
+        "nombre_pattes": 8,
+        "territoire": "Forêt Interdite"
+    },
+    "92fbed46-08c2-4a51-acad-89fc1d26c236": {
+        "type": "Acromentule",
+        "id": "92fbed46-08c2-4a51-acad-89fc1d26c236",
+        "created_at": "2026-02-12T10:48:21.636636",
+        "updated_at": "2026-02-12T10:48:21.636637",
+        "nom": "Mosag",
+        "taille": "XL",
+        "venin": "Paralysant",
+        "nombre_pattes": 8,
+        "territoire": "Terrier"
+    },
+    "c92a9ac1-16ef-4c70-a8e9-a6e24186bf1a": {
+        "type": "Detraqueur",
+        "id": "c92a9ac1-16ef-4c70-a8e9-a6e24186bf1a",
+        "created_at": "2026-02-12T10:48:21.636647",
+        "updated_at": "2026-02-12T10:48:21.636648",
+        "nom": "Gardien1",
+        "puissance_aspiration": "Très Haute",
+        "lieu_garde": "Azkaban",
+        "dangerosite": "Extrême"
+    },
+    "f806a779-161a-46e0-b26d-47e7566f806a": {
+        "type": "Detraqueur",
+        "id": "f806a779-161a-46e0-b26d-47e7566f806a",
+        "created_at": "2026-02-12T10:48:21.636656",
+        "updated_at": "2026-02-12T10:48:21.636657",
+        "nom": "Gardien2",
+        "puissance_aspiration": "Haute",
+        "lieu_garde": "Poudlard",
+        "dangerosite": "Élevée"
+    },
+    "be451212-6c78-471e-b73d-6a2fc897a292": {
+        "type": "Dragon",
+        "id": "be451212-6c78-471e-b73d-6a2fc897a292",
+        "created_at": "2026-02-12T10:48:21.636665",
+        "updated_at": "2026-02-12T10:48:21.636666",
+        "nom": "Norbert",
+        "type_dragon": "Norvégien à crête",
+        "souffle": "Feu",
+        "tresor": "Or et bijoux",
+        "age": 2
+    },
+    "e407fe75-32a4-4340-93c0-ef861fd84d87": {
+        "type": "Dragon",
+        "id": "e407fe75-32a4-4340-93c0-ef861fd84d87",
+        "created_at": "2026-02-12T10:48:21.636674",
+        "updated_at": "2026-02-12T10:48:21.636676",
+        "nom": "Horntail",
+        "type_dragon": "Hongrois à pointes",
+        "souffle": "Feu intense",
+        "tresor": "Œufs dorés",
+        "age": 15
+    },
+    "15b6a554-93da-4644-a9dd-061de95bdbe7": {
+        "type": "ElfeDeMaison",
+        "id": "15b6a554-93da-4644-a9dd-061de95bdbe7",
+        "created_at": "2026-02-12T10:48:21.636683",
+        "updated_at": "2026-02-12T10:48:21.636685",
+        "nom": "Dobby",
+        "maitre": "Malfoy",
+        "loyaute": "Moyenne",
+        "magie_domestique": "Puissante"
+    },
+    "c8246b03-6562-40fc-8d16-fb291d4d0ddd": {
+        "type": "ElfeDeMaison",
+        "id": "c8246b03-6562-40fc-8d16-fb291d4d0ddd",
+        "created_at": "2026-02-12T10:48:21.636693",
+        "updated_at": "2026-02-12T10:48:21.636694",
+        "nom": "Florianvandeville",
+        "maitre": "Goré",
+        "loyaute": "Très Haute",
+        "magie_domestique": "Modérée"
+    }
+}
