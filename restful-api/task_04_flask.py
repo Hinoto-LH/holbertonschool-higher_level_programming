@@ -10,6 +10,7 @@ app = Flask(__name__)
 # Base de données en mémoire (vide au départ pour le checker)
 users = {}
 
+
 @app.route("/")
 def home():
     """
@@ -18,6 +19,7 @@ def home():
         str: Message de bienvenue.
     """
     return "Welcome to the Flask API!"
+
 
 @app.route("/status")
 def status():
@@ -28,6 +30,7 @@ def status():
     """
     return "OK"
 
+
 @app.route("/data")
 def get_usernames():
     """
@@ -36,6 +39,7 @@ def get_usernames():
         JSON: Liste des clés du dictionnaire users.
     """
     return jsonify(list(users.keys()))
+
 
 @app.route("/users/<username>")
 def get_user(username):
@@ -50,6 +54,7 @@ def get_user(username):
     if user:
         return jsonify(user)
     return jsonify({"error": "User not found"}), 404
+
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
@@ -81,6 +86,7 @@ def add_user():
         "message": "User added successfully",
         "user": data
     }), 201
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
