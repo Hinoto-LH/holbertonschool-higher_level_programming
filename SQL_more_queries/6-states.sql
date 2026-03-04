@@ -1,7 +1,9 @@
--- script that creates the database hbtn_0d_usa and the table states
+-- Create database if it does not exist
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
--- create table states
-CREATE TABLE IF NOT EXISTS states FROM htbn_0d_usa(
-	id INT PRIMARY KEY,
-	name VARCHAR(256)
+
+-- Create table states in the database
+CREATE TABLE IF NOT EXISTS hbtn_0d_usa.states (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(256) NOT NULL,
+    PRIMARY KEY (id)
 );
