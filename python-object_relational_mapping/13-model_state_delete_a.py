@@ -18,7 +18,8 @@ if __name__ == "__main__":
 
     # Create the connection to the MySQL database
     engine = create_engine(
-        "mysql+mysqldb://{}:{}@localhost:3306/{}".format(user, password, database),
+        "mysql+mysqldb://{}:{}@localhost:3306/{}".format
+        (user, password, database),
         pool_pre_ping=True
     )
 
