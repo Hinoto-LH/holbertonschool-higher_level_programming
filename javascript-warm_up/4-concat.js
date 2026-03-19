@@ -8,4 +8,3 @@ if (args[0] === undefined) {
 } else {
   console.log(args[0] + ' is ' + args[1]);
 }
-
