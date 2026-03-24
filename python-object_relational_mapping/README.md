@@ -28,10 +28,10 @@ connection = mysql.connector.connect(
     password="votre_mot_de_passe",
     database="votre_base"
 )
-```
 
 cursor = connection.cursor()
 print("Connexion reussie")
+```
 
 Il est important de fermer la connexion apres utilisation :
 

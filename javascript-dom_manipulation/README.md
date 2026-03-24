@@ -1,10 +1,10 @@
-# 🌐 JavaScript DOM & API — Aide-mémoire
+# JavaScript DOM & API — Aide-mémoire
 
 Un guide pratique pour sélectionner et manipuler des éléments HTML, gérer les événements et effectuer des requêtes HTTP en JavaScript vanilla.
 
 ---
 
-## 📋 Table des matières
+## Table des matières
 
 - [Sélectionner des éléments HTML](#-sélectionner-des-éléments-html)
 - [Sélecteurs ID, classe et balise](#-sélecteurs-id-classe-et-nom-de-balise)
@@ -18,7 +18,7 @@ Un guide pratique pour sélectionner et manipuler des éléments HTML, gérer le
 
 ---
 
-## 🔍 Sélectionner des éléments HTML
+## Sélectionner des éléments HTML
 
 JavaScript propose plusieurs méthodes pour sélectionner des éléments dans le DOM.
 
@@ -43,7 +43,7 @@ const items = document.querySelectorAll('ul > li');
 
 ---
 
-## 🎯 Sélecteurs ID, classe et nom de balise
+## Sélecteurs ID, classe et nom de balise
 
 | Sélecteur | Syntaxe | Retourne | Exemple |
 |-----------|---------|----------|---------|
@@ -78,7 +78,7 @@ document.querySelectorAll('input[type="text"]');
 
 ---
 
-## 🎨 Modifier le style d'un élément
+## Modifier le style d'un élément
 
 ```javascript
 const box = document.querySelector('.box');
@@ -109,7 +109,7 @@ console.log(computed.color);         // ex. "rgb(0, 0, 0)"
 
 ---
 
-## 📝 Lire et modifier le contenu d'un élément
+## Lire et modifier le contenu d'un élément
 
 ```javascript
 const el = document.querySelector('#message');
@@ -146,7 +146,7 @@ link.hasAttribute('disabled');       // vérifier
 
 ---
 
-## 🏗️ Modifier le DOM
+## Modifier le DOM
 
 ```javascript
 // --- Créer des éléments ---
@@ -296,7 +296,7 @@ async function supprimerUtilisateur(id) {
 
 ---
 
-## 👂 Écouter les événements DOM
+## Écouter les événements DOM
 
 ```javascript
 const btn = document.querySelector('#submit-btn');
@@ -410,4 +410,4 @@ el.addEventListener('touchmove', handler);
 
 ---
 
-*Fait avec ❤️ — Masseron Axel*
+*Masseron Axel*
