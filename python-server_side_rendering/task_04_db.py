@@ -6,68 +6,83 @@ import sqlite3
 app = Flask(__name__)
 
 
-def read_json(filepath):
-    """Read and return data from a JSON file."""
-    with open(filepath, 'r') as f:
-        return json.load(f)
+# --- Functions to read data ---
+def read_json():
+    try:
+        with open('products.json', 'r') as file:
+            return json.load(file)
+    except Exception as e:
+        print("Error reading JSON:", e)
+        return []
 
 
-def read_csv(filepath):
-    """Read and return data from a CSV file as a list of dicts."""
+def read_csv():
     products = []
-    with open(filepath, 'r') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            products.append({
-                "id":       int(row["id"]),
-                "name":     row["name"],
-                "category": row["category"],
-                "price":    float(row["price"])
-            })
+    try:
+        with open('products.csv', 'r') as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                row['id'] = int(row['id'])
+                row['price'] = float(row['price'])
+                products.append(row)
+    except Exception as e:
+        print("Error reading CSV:", e)
     return products
 
 
-def read_sql(filepath):
-    """Read and return data from a SQLite database."""
+def read_sql():
+    products = []
     try:
-        conn = sqlite3.connect(filepath)
-        conn.row_factory = sqlite3.Row
+        conn = sqlite3.connect('products.db')
+        conn.row_factory = sqlite3.Row  # Permet d'accéder aux colonnes par nom
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM Products")
         rows = cursor.fetchall()
+        for row in rows:
+            products.append({
+                'id': row['id'],
+                'name': row['name'],
+                'category': row['category'],
+                'price': row['price']
+            })
         conn.close()
-        return [{"id": row["id"], "name": row["name"],
-                 "category": row["category"], "price": row["price"]}
-                for row in rows]
-    except sqlite3.Error as e:
-        return None
+    except Exception as e:
+        print("Error reading SQL:", e)
+    return products
 
 
+# --- Route ---
 @app.route('/products')
 def products():
-    source = request.args.get('source')
-    product_id = request.args.get('id')
+    source = request.args.get('source', '').lower()
+    id_param = request.args.get('id', None)
 
-    # --- Handle source ---
+    error = None
+    product_list = []
+
+    # Choisir la source
     if source == 'json':
-        data = read_json('products.json')
+        product_list = read_json()
     elif source == 'csv':
-        data = read_csv('products.csv')
+        product_list = read_csv()
     elif source == 'sql':
-        data = read_sql('products.db')
-        if data is None:
-            return render_template('product_display.html',
-                                   error="Database error: could not fetch data.")
+        product_list = read_sql()
     else:
-        return render_template('product_display.html', error="Wrong source")
+        error = "Wrong source"
+        product_list = []
 
-    # --- Filter by id if provided ---
-    if product_id:
-        data = [p for p in data if p['id'] == int(product_id)]
-        if not data:
-            return render_template('product_display.html', error="Product not found")
+    # Filtrer par id si fourni
+    if id_param and not error:
+        try:
+            id_int = int(id_param)
+            filtered = [p for p in product_list if p['id'] == id_int]
+            if not filtered:
+                error = "Product not found"
+            product_list = filtered
+        except ValueError:
+            error = "Invalid id"
 
-    return render_template('product_display.html', products=data)
+    return render_template('product_display.html', products=product_list, error=error)
 
 
 if __name__ == '__main__':
