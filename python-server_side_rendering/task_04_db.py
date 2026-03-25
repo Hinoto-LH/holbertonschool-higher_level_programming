@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import json
 import csv
+import sqlite3
 
 app = Flask(__name__)
 
@@ -26,16 +27,37 @@ def read_csv(filepath):
     return products
 
 
+def read_sql(filepath):
+    """Read and return data from a SQLite database."""
+    try:
+        conn = sqlite3.connect(filepath)
+        conn.row_factory = sqlite3.Row
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM Products")
+        rows = cursor.fetchall()
+        conn.close()
+        return [{"id": row["id"], "name": row["name"],
+                 "category": row["category"], "price": row["price"]}
+                for row in rows]
+    except sqlite3.Error as e:
+        return None
+
+
 @app.route('/products')
 def products():
     source = request.args.get('source')
     product_id = request.args.get('id')
 
-    # --- Handle invalid source ---
+    # --- Handle source ---
     if source == 'json':
         data = read_json('products.json')
     elif source == 'csv':
         data = read_csv('products.csv')
+    elif source == 'sql':
+        data = read_sql('products.db')
+        if data is None:
+            return render_template('product_display.html',
+                                   error="Database error: could not fetch data.")
     else:
         return render_template('product_display.html', error="Wrong source")
 

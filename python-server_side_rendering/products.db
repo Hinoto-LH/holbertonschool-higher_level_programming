@@ -1,5 +1,6 @@
 import sqlite3
 
+
 def create_database():
     conn = sqlite3.connect('products.db')
     cursor = conn.cursor()
@@ -11,6 +12,7 @@ def create_database():
             price REAL NOT NULL
         )
     ''')
+    cursor.execute('DELETE FROM Products')  # Nettoyer pour éviter doublons
     cursor.execute('''
         INSERT INTO Products (id, name, category, price)
         VALUES
@@ -20,6 +22,7 @@ def create_database():
     conn.commit()
     conn.close()
     print("Database created and populated successfully!")
+
 
 if __name__ == '__main__':
     create_database()
