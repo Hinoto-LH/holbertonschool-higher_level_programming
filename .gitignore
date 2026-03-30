@@ -211,7 +211,7 @@ __marimo__/
 *.main.c
 *.json
 *.csv
-*.txt
+
 python-test_driven_development/0-add_integer.py, tests/0-main.c
 python-classes/1-main.c
 
